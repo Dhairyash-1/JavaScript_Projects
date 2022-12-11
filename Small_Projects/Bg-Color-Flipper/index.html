@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Color Flippper</title>
+    <style>
+      body {
+        background: yellow;
+        text-align: center;
+        height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      .red {
+        background-color: red;
+      }
+      .btn {
+        padding: 10px;
+        color: black;
+        font-size: 25px;
+        background: cyan;
+        border: none;
+        border-radius: 10px;
+        margin-left: 1rem;
+      }
+
+      .show-hide {
+        display: none;
+      }
+    </style>
+  </head>
+  <body class="red bg">
+    <div class="box">
+      <button class="btn">Change Background</button>
+      <button class="btn loginbtn">Login Modal</button>
+    </div>
+    <div class="login">
+      <div class="input-box">
+        <span>Username</span>
+        <input type="text" name="" id="" />
+      </div>
+      <div class="input-box">
+        <span>Password</span>
+        <input type="password" name="" id="" />
+      </div>
+    </div>
+
+    <script>
+      const loginModal = document.querySelector(".loginbtn");
+      const loginForm = document.querySelector(".login");
+      const colorChangeBtn = document.querySelector(".btn");
+      const bodybg = document.querySelector(".bg");
+      colorChangeBtn.addEventListener("click", () => {
+        bodybg.classList.toggle("red");
+      });
+      loginModal.addEventListener("click", () => {
+        loginForm.classList.toggle("show-hide");
+      });
+    </script>
+  </body>
+</html>
