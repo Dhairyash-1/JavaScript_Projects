@@ -1,0 +1,97 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    
+    
+}
+
+
+.title{
+    font-size: 26px;
+    font-weight: bolder;
+    text-align: center;
+
+}
+
+.todobox{
+    /* background: gray; */
+    margin-top: 6rem;
+
+}
+
+.entrysection input{
+    height: 45px;
+    padding: 10px;
+    font-size: 22px;
+    border-width: 2px;
+}
+
+.btn{
+    border: none;
+    outline: none;
+    background-color: tomato;
+    color: white;
+    border-radius: 5px;
+}
+.entrysection input:nth-child(1){
+    margin-right: 1rem;
+    width: 400px;
+}
+
+
+
+#displaytask{
+    margin-top: 2rem;
+    
+    font-size: 17px;
+}
+#displaytask li{
+    cursor: pointer;
+    list-style: none;
+    font-size: 22px;
+   
+
+}
+.taskbox{
+    border: 3px solid salmon;
+    padding: 10px;
+    margin-bottom: 1rem;
+    position: relative;
+    border-radius: 20px;
+   display: flex;
+
+}
+
+
+.tasks{
+    width: 400px;
+   border: none;
+    font-size: 22px;
+    outline: none;
+    
+}
+.tasks:focus{
+    outline: none;
+}
+
+button{
+    border: none;
+    padding: 5px;
+    font-size: 20px;
+    background: transparent;
+    border-radius: 10px;
+    text-align: center;
+
+
+}
+button:hover{
+    color: tomato;
+    transition: .4s linear;
+}

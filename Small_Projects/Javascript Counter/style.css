@@ -1,0 +1,37 @@
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.counter{
+    text-align: center;
+   
+    
+}
+
+h1{
+    font-size: 5rem;
+}
+button{
+    font-size: 2rem;
+    background: tomato;
+    border: none;
+    outline: none;
+    border-radius: .5rem;
+    padding: 1rem 2rem;
+    color: blue;
+}
+.inc{
+    background: green;
+    color: yellow;
+    /* margin-left: 2rem; */
+
+}
+
+.btn{
+    display: flex;
+    gap: 2rem;
+    flex-wrap: wrap;
+    justify-content: center;
+}
