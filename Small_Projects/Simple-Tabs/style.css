@@ -1,0 +1,37 @@
+.tabs {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  list-style: none;
+  border-bottom: 3px solid black;
+}
+.tab {
+  font-size: 25px;
+  cursor: pointer;
+  padding: 10px;
+}
+/* 
+[data-tab-content] {
+  display: none;
+}
+.active[data-tab-content] {
+  display: block;
+} */
+.tab.active {
+  background-color: #ccc;
+}
+.tab:hover {
+  background-color: #aaa;
+}
+.tab-content {
+  margin: 0 40px;
+}
+
+/* 
+ */
+.tab-content-div {
+  display: none;
+}
+.tab-content-div.active {
+  display: block;
+}
