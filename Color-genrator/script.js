@@ -11,8 +11,8 @@ const genratepalette = () => {
     colorDiv.classList.add("box");
     colorDiv.innerHTML = `
     <div class="color-bg" style = "background: ${colorValue} "></div>
-    <span class='hex-value' >${colorValue}</span>
-  `;
+    <span class='hex-value' >${colorValue}</span>`;
+    colorDiv.addEventListener("click", () => copyText(colorDiv, colorValue));
     containner.appendChild(colorDiv);
   }
 };
@@ -20,3 +20,18 @@ genratepalette();
 
 // create new palettes on every click on button
 genratorColorBtn.addEventListener("click", genratepalette);
+
+// Copy text function
+
+function copyText(elm, hexvalue) {
+  let colorTextSpan = elm.querySelector(".hex-value");
+  console.log(colorTextSpan);
+
+  // below navigator clipboard writethe recieved parm hexvalue in clipboard and return promise
+  navigator.clipboard.writeText(hexvalue).then(() => {
+    colorTextSpan.innerText = "copied";
+    setTimeout(() => (colorTextSpan.innerText = hexvalue), 1000).catch(() =>
+      alert("Failed to copy color Code")
+    );
+  });
+}
