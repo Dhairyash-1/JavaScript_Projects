@@ -23,10 +23,11 @@ const tabContentDiv = document.querySelectorAll(".tab-content-div");
 tabs.forEach((tab) => {
   tab.addEventListener("click", () => {
     const targetTab = tab.getAttribute("id");
+
     tabContentDiv.forEach((tabdiv) => {
       tabdiv.classList.remove("active");
       if (targetTab === tabdiv.getAttribute("id")) {
-        // tabdiv.classList.add("active");
+        // tab.classList.add("active");
         tabdiv.classList.add("active");
       }
     });
