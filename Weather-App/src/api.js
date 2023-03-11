@@ -2,6 +2,18 @@
 import updateData from "./index";
 const api_key = "6d667575827b9c33b695503cf83e9e65";
 
+function getData(data) {
+  const city = data.name;
+  const country = data.sys.country;
+  const weatherDes = data.weather[0].main;
+  const { feels_like, temp } = data.main;
+  const degreeTemp = Math.floor(temp - 273.15);
+  const degreeFeelsLike = Math.floor(feels_like - 273.15);
+  console.log(degreeTemp, degreeFeelsLike, weatherDes, city, country);
+
+  updateData(degreeTemp, degreeFeelsLike, weatherDes, city, country);
+}
+
 // fetching weather Api using City Name
 export default async function apiRequestByName(name) {
   const res = await fetch(
@@ -9,14 +21,7 @@ export default async function apiRequestByName(name) {
   );
   const data = await res.json();
   console.log(data);
-  const city = data.name;
-  const country = data.sys.country;
-  const weatherDes = data.weather[0].main;
-  const { feels_like, temp } = data.main;
-  const degreeTemp = Math.floor(temp - 273.15);
-  const degreeFeelsLike = Math.floor(feels_like - 273.15);
-  updateData(degreeTemp, degreeFeelsLike, weatherDes, city, country);
-  console.log(degreeTemp, degreeFeelsLike, weatherDes, city, country);
+  getData(data);
 }
 
 // fetching weather Api using Current location
@@ -26,14 +31,5 @@ export async function apiRequestByLocation(lat, lon) {
   );
   const data = await res.json();
   console.log(data);
-  // console.log("this", lat, lon);
-
-  // extracting all data from api
-  const city = data.name;
-  const country = data.sys.country;
-  const weatherDes = data.weather[0].main;
-  const { feels_like, temp } = data.main;
-  const degreeTemp = Math.floor(temp - 273.15);
-  const degreeFeelsLike = Math.floor(feels_like - 273.15);
-  updateData(degreeTemp, degreeFeelsLike, weatherDes, city, country);
+  getData(data);
 }

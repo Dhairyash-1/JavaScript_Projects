@@ -1,6 +1,5 @@
 "use strict";
 import apiRequestByName from "./api";
-// import temp from "./api";
 import { apiRequestByLocation } from "./api";
 import "./styles/main.scss";
 import clear from "./assets/clear.svg";
@@ -12,7 +11,7 @@ import storm from "./assets/storm.svg";
 
 // Storing values in variable
 
-const inputValue = document.querySelector("#cityName");
+const inputValue = document.getElementById("cityName");
 const getWeatherBtn = document.querySelector(".getWeatherBtn");
 const locationBtn = document.querySelector(".getLocationBtn");
 const weatherIcon = document.querySelector("#weatherIcon");
@@ -21,12 +20,13 @@ const place = document.querySelector(".place");
 const temprature = document.querySelector(".temp");
 
 getWeatherBtn.addEventListener("click", () => {
+  console.log(inputValue);
   const cityName = inputValue.value;
+  inputValue.innerHTML = "";
   apiRequestByName(cityName);
 });
 
 apiRequestByName("jaipur");
-// console.log(temp);
 
 export default function updateData(temp, fl, des, city, country) {
   temprature.textContent = `${temp}°C`;
