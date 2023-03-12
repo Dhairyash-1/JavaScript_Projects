@@ -1,4 +1,4 @@
-// const api_Key = `v36SpAH3dnFYGMst8Oj9pBsZ9QX0CYvk`;
+import "./style.css";
 const myHeaders = new Headers();
 myHeaders.append("apikey", `v36SpAH3dnFYGMst8Oj9pBsZ9QX0CYvk`);
 
