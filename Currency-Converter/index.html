@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vite App</title>
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <div class="containner">
+      <h1 class="heading">Currency Converter</h1>
+      <form action="#">
+        <label>Enter Amount</label>
+        <input type="text" value="1" id="enterAmt" />
+        <div class="conversion">
+          <p class="to-seprator">From</p>
+
+          <div class="from">
+            <select name="" class="droplistOptions">
+              <!-- <option value="">USD</option>
+                <option value="">INR</option>
+                <option value="">GBP</option> -->
+            </select>
+          </div>
+          <p class="to-seprator">To</p>
+          <div class="to">
+            <select name="" class="droplistOptions">
+              <!-- <option value="">USD</option>
+                <option value="">INR</option>
+                <option value="">GBP</option> -->
+            </select>
+          </div>
+        </div>
+        <p class="exchangeResult"></p>
+        <button class="getRate">Get Exchange rate</button>
+      </form>
+    </div>
+    <script type="module" src="/main.js"></script>
+  </body>
+</html>
