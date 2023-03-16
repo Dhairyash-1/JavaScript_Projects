@@ -1,9 +1,10 @@
 import "./style.css";
+
 const myHeaders = new Headers();
 myHeaders.append("apikey", `v36SpAH3dnFYGMst8Oj9pBsZ9QX0CYvk`);
 
 const requestOption = {
-  method: "Get",
+  method: "GET",
   mode: "cors",
   headers: myHeaders,
 };
@@ -47,7 +48,7 @@ async function getCountryList() {
 }
 getCountryList();
 
-// store values in variable
+// access html elment and store in variable
 
 const amt = document.getElementById("enterAmt");
 const fromCurrency = document.querySelector(".from select");
@@ -55,8 +56,7 @@ const toCurrency = document.querySelector(".to select");
 const result = document.querySelector(".exchangeResult");
 const getRateBtn = document.querySelector(".getRate");
 
-// function updateData(data) {}
-
+// Run function on click button
 getRateBtn.addEventListener("click", (e) => {
   e.preventDefault();
 
@@ -72,16 +72,11 @@ getRateBtn.addEventListener("click", (e) => {
       requestOption
     );
     const data = await res.json();
-    // console.log(data);
-    // console.log(data.rates["USD"]);
-    // updateData(data);
-    // console.log(data);
     let conversionRate = data.rates[toCurrencyValue];
     let finalResult = conversionRate * amtValue;
-    // console.log("thisis", conversionRate * amtValue);
-
     result.textContent = `${amtValue} ${fromCurrencyValue} = ${finalResult.toFixed(
       2
-    )} ${toCurrencyValue}`;
+    )}
+     ${toCurrencyValue}`;
   }
 });
