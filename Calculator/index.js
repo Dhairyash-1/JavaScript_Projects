@@ -8,9 +8,17 @@ const allClearBtn = document.querySelector(".all-clear");
 const deleteBtn = document.querySelector(".delete");
 const decimalBtn = document.querySelector(".decimal");
 
+let errorFlag = false;
+
 // displaying the clicked number on screen
 numberBtn.forEach((btn) => {
   btn.addEventListener("click", (e) => {
+    // if error on the screen so first clear the screen
+
+    if (errorFlag) {
+      outputScreen.textContent = "";
+      errorFlag = false;
+    }
     let inputValue = e.target.innerText;
     outputScreen.textContent += inputValue;
   });
@@ -20,6 +28,12 @@ numberBtn.forEach((btn) => {
 
 operatorBtn.forEach((btn) => {
   btn.addEventListener("click", (e) => {
+    // if error on the screen so first clear the screen
+
+    if (errorFlag) {
+      outputScreen.textContent = "";
+      errorFlag = false;
+    }
     let inputValue = e.target.innerText;
     if (outputScreen.textContent.at(-1) == "+") {
       outputScreen.textContent += "";
@@ -37,11 +51,13 @@ operatorBtn.forEach((btn) => {
 
 // showing decimal value on click
 decimalBtn.addEventListener("click", (e) => {
+  // if error on the screen so first clear the screen
+  if (errorFlag) {
+    outputScreen.textContent = "";
+    errorFlag = false;
+  }
   let inputValue = e.target.innerText;
-  if (
-    outputScreen.textContent.at(-1) == inputValue ||
-    outputScreen.textContent.includes(".")
-  ) {
+  if (outputScreen.textContent.at(-1) == inputValue) {
     outputScreen.textContent += "";
   } else {
     outputScreen.textContent += inputValue;
@@ -57,6 +73,7 @@ equalBtn.addEventListener("click", () => {
   } catch {
     outputScreen.innerText = "";
     outputScreen.innerText = "Invaild Input";
+    errorFlag = true;
   }
 });
 
