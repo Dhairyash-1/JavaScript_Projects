@@ -1,0 +1,105 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background: rgb(60, 27, 120);
+}
+.container {
+  max-width: 400px;
+  width: 100%;
+  padding: 20px 25px;
+  border-radius: 5px;
+  background: #ffffff;
+  text-align: center;
+}
+h1 {
+  font-size: 28px;
+  margin-bottom: 10px;
+  font-weight: bold;
+  color: blue;
+}
+h4 {
+  font-size: 18px;
+  margin-bottom: 20px;
+  font-weight: normal;
+  color: rgba(60, 27, 120, 0.9);
+}
+#inputLabel {
+  display: block;
+  text-align: left;
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+#qrInput {
+  width: 100%;
+  outline: none;
+  height: 45px;
+  padding: 10px;
+  border: 2px solid rgb(60, 27, 120);
+  border-radius: 5px;
+  margin-bottom: 30px;
+  font-size: 20px;
+}
+
+button {
+  padding: 10px 50px;
+  font-size: 22px;
+  color: white;
+  background: blue;
+  outline: none;
+  border: none;
+  border-radius: 4px;
+  margin-bottom: 20px;
+  cursor: pointer;
+}
+.downloadBtn a {
+  text-decoration: none;
+  color: white;
+}
+button.inactive {
+  pointer-events: none;
+  background: #9191d6;
+}
+.output {
+  max-height: 0;
+  margin-bottom: 30px;
+  width: 300px;
+  transition: max-height 1s;
+  overflow: hidden;
+}
+.output .qrimage {
+  width: 100%;
+  height: 100%;
+  padding: 10px;
+}
+.output.showImg {
+  max-height: 300px;
+  margin: 0px auto 30px auto;
+}
+.error {
+  border: 2px solid red !important;
+  animation: shake 0.1s linear 10;
+}
+@keyframes shake {
+  0% {
+    transform: translateX(0);
+  }
+  25% {
+    transform: translateX(-2px);
+  }
+  50% {
+    transform: translateX(0);
+  }
+  75% {
+    transform: translateX(2px);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
