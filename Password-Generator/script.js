@@ -3,20 +3,13 @@ const lowercase = document.getElementById('lowercase')
 const uppercase = document.getElementById('uppercase')
 const number = document.getElementById('number')
 const symbols = document.getElementById('symbols')
-const passwordLength = document.getElementById('length')
+const passwordLengthRange = document.getElementById('length')
 const passwordLengthIndicator = document.getElementById('lengthValue')
 const coppybtn = document.getElementById('copybtn')
 const passwordGenerateBtn = document.getElementById('button')
 
-// changing length input box value on range slide
-passwordLength.addEventListener('input', () => {
-  passwordLengthIndicator.value = passwordLength.value
-})
-// changing range slide value on length box value
-passwordLengthIndicator.addEventListener('input', () => {
-  const IndicatorValue = passwordLengthIndicator.value
-  passwordLength.value = IndicatorValue
-})
+passwordLengthRange.addEventListener('input', syncCharacterLength)
+passwordLengthIndicator.addEventListener('input', syncCharacterLength)
 
 // Generate password onclick
 passwordGenerateBtn.addEventListener('click', e => {
@@ -26,7 +19,7 @@ passwordGenerateBtn.addEventListener('click', e => {
     uppercase.checked,
     number.checked,
     symbols.checked,
-    passwordLength.value
+    passwordLengthRange.value
   )
   passwordInput.value = Password
 })
@@ -54,14 +47,14 @@ function generatePassword(lowercase, uppercase, number, symbol, length) {
 }
 function copyPassword() {
   passwordInput.select()
-  copyText.setSelectionRange(0, 99999) // for mobile
+  passwordInput.setSelectionRange(0, 99999) // for mobile
   navigator.clipboard.writeText(passwordInput.value)
   coppybtn.classList.add('fa-solid')
   setTimeout(() => coppybtn.classList.remove('fa-solid'), 1500)
 }
 
-function checkPasswordStrength() {
-  const availablePassword = passwordInput.value
-
-  // if(availablePassword.includes)
+function syncCharacterLength(e) {
+  const value = e.target.value
+  passwordLengthRange.value = value
+  passwordLengthIndicator.value = value
 }
