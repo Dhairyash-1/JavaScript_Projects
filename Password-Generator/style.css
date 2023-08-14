@@ -1,0 +1,108 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #33bbc5;
+}
+.container {
+  margin: 0 auto;
+  background: #ebf8f4;
+  max-width: 400px;
+  width: 100%;
+  padding: 25px 20px;
+  border-radius: 5px;
+}
+.container > h1 {
+  color: blueviolet;
+  margin-bottom: 25px;
+  text-align: center;
+}
+
+form {
+  text-align: center;
+}
+form .password_Box {
+  width: 100%;
+  border: 1px solid #33bbc5;
+  position: relative;
+  margin-bottom: 20px;
+  height: 45px;
+}
+
+form #password {
+  width: 100%;
+  height: 100%;
+  outline: none;
+  border: none;
+  font-size: 20px;
+  padding: 10px;
+}
+form .password_Box i {
+  position: absolute;
+  display: inline-block;
+  top: 50%;
+  transform: translateY(-50%);
+  right: 20px;
+  font-size: 20px;
+}
+.customize {
+  padding: 0 20px;
+}
+.customize .checkbox {
+  margin-bottom: 10px;
+  font-size: 22px;
+  display: flex;
+  align-items: center;
+}
+.checkbox input {
+  margin-right: 20px;
+  width: 20px;
+  height: 20px;
+}
+.passwordLength {
+  margin-top: 30px;
+}
+.passwordLength label {
+  display: block;
+  font-size: 24px;
+  margin-bottom: 15px;
+  text-align: left;
+}
+.passwordLength .lengthbox {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  width: 100%;
+}
+.lengthbox #length {
+  width: 80%;
+  cursor: pointer;
+}
+.lengthbox #lengthValue {
+  width: 15%;
+  height: 35px;
+  text-align: center;
+  outline: none;
+}
+form button {
+  margin-top: 25px;
+  font-size: 22px;
+  padding: 10px 15px;
+  color: white;
+  background: #33bbc5;
+  border: none;
+  outline: none;
+  border-radius: 3px;
+  cursor: pointer;
+}
+form button:hover {
+  background: #1da9b3;
+}
